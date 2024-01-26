@@ -1,0 +1,113 @@
+﻿@model List<WebApplication1.Models.Pearproduction>
+<div class="container min-vh-100 d-flex flex-column justify-content-center">
+    <div class="row my-3">
+        <div class="col">
+            <h1>Son 3 Yıla Göre Üretim Dağılımı </h1>
+        </div>
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="col-xl-2 col-sm-3 col-6">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <a href="/Admin/FruitProductionDistribution" class="text-decoration-none">
+                                <div class="media d-flex">
+                                    <div class="align-self-center text-bg-light">
+                                        <i class="fa-solid fa-pencil fa-2xl"></i>
+                                    </div>
+                                    <div class="media-body text-right text-black">
+                                        <h3>Düzenle</h3>
+                                        <span>(Admin Görebilir)</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="row my-2">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <canvas id="chBar" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Script {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var colors = ['#007bff', '#28a745', '#444444', '#c3e6cb', '#dc3545', '#6c757d'];
+
+        var chBar = document.getElementById("chBar");
+        var chartData = {
+            labels: [
+                @foreach (var item in @Model)
+                {
+                    @: ' @item.country_name' ,
+
+                }
+            ],
+            datasets: [{
+                data: [
+                     @foreach (var item in @Model)
+                     {
+                         @:  @item.production_2018 ,
+
+                     }
+                ],
+                label:'2018',
+                backgroundColor: colors[0]
+            },
+            {
+                data: [
+                     @foreach (var item in @Model)
+                     {
+                         @:  @item.production_2019 ,
+
+                     }
+                ],
+                label: '2019',
+                backgroundColor: colors[1]
+            },
+            {
+                data: [
+                     @foreach (var item in @Model)
+                     {
+                         @:  @item.production_2020 ,
+
+                     }
+                ],
+                label: '2020',
+                backgroundColor: colors[2]
+            }]
+        };
+
+        if (chBar) {
+            new Chart(chBar, {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    scales: {
+                        xAxes: [{
+                            barPercentage: 0.4,
+                            categoryPercentage: 0.5
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: false
+                            }
+                        }]
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            });
+        }
+    </script>
+    }

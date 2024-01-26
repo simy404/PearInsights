@@ -1,0 +1,26 @@
+﻿@model WebApplication1.Models.PearTypeViewModel
+
+<section class="container d-flex flex-column justify-content-between min-vh-100 mx-auto ">
+    <div class="col-6">
+        <div class="">
+            <h3 class="mb-4 ps-4">Değeri Güncelle</h3>
+        </div>
+        <div class=" mt-5 mb-5 ps-4">
+            @using (Html.BeginForm("EditPearTypes", "Admin", FormMethod.Post))
+            {
+                <div class="row mb-2">
+                    <div class="col-md-2">
+                        @Html.LabelFor(x => x.Type, new { @Class = "form-label" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(x => x.Type, new { @Value = @Model.Type, @class = "form-control" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.ValidationMessageFor(x => x.Type)
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg ">Güncelle</button>
+            }
+        </div>
+    </div>
+</section>

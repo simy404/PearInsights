@@ -1,0 +1,67 @@
+﻿@model List<WebApplication1.Models.CitiesProducingPear>
+<section class="mt-5 mb-5 container min-vh-100 d-flex flex-column justify-content-center text">
+    <div class="row">
+        <div class="col-12">
+            <div class="row my-3">
+                <div class="col">
+                    <h1>Türkiye'de Armut Yetiştiren Şehirler </h1>
+                </div>
+                <div class="col-xl-2 col-sm-3 col-6">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <a href="/Admin/AddCitiesProducingPears" class="text-decoration-none">
+                                    <div class="media d-flex">
+                                        <div class="align-self-center text-bg-light">
+                                            <i class="fa-solid fa-circle-plus fa-2xl success"></i>
+                                        </div>
+                                        <div class="media-body text-right text-black">
+                                            <h3>Ekle</h3>
+                                            <span>(Admin Görebilir)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col"><h4>Şehir</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr class="fs-4">
+                            <th scope="row"><p class="fs-5">@item.Id</p></th>
+                            <td>@item.City</td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-3 d-flex ms-auto">
+                                        @using (Html.BeginForm("DeleteCitiesProducingPears", "Admin", FormMethod.Post))
+                                        {
+                                            @Html.Hidden("id", item.Id)
+                                            <button type="submit" class="btn btn-danger btn-lg">Sil</button>
+                                        }
+                                    </div>
+                                    <div class="col-3">
+                                        @Html.ActionLink("Güncelle", "EditCitiesProducingPears", "Admin", new { id = item.Id }, new { @class = "btn btn-success btn-lg" })
+                                    </div>
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+

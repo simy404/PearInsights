@@ -1,0 +1,26 @@
+﻿@model WebApplication1.Models.PearTypeViewModel
+
+<section class="container d-flex flex-column justify-content-between min-vh-100 mx-auto">
+    <div class="col-6">
+        <div class="">
+            <h1 class="mb-5 ">Veri Ekle</h1>
+        </div>
+        @using (Html.BeginForm("AddPearTypes", "Admin", FormMethod.Post))
+        {
+            <div class="row mb-2">
+                <div class="col-md-2">
+                    @Html.LabelFor(x => x.Type, new { @Class = "form-label" })
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x => x.Type, new { @class = "form-control" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ValidationMessageFor(x => x.Type)
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg">Ekle</button>
+        }
+    </div>
+
+</section>
+

@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Models.PearproductionsViewModel
+
+<section class="container d-flex flex-column justify-content-between min-vh-100 mx-auto">
+    <div class="col-6">
+        <div class="">
+            <h1 class="mb-5 ">Veri Ekle</h1>
+        </div>
+        @using (Html.BeginForm("AddFruitProductionDistribution", "Admin", FormMethod.Post))
+        {
+            <div class="row mb-2">
+                <div class="col-md-2">
+                    @Html.LabelFor(x => x.country_name ,new { @Class = "form-label" })
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x => x.country_name, new {  @class = "form-control" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ValidationMessageFor(x => x.country_name)
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-2">
+                    @Html.LabelFor(x => x.production_2018, new { @Class = "form-label" })
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x => x.production_2018, new { @class = "form-control" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ValidationMessageFor(x => x.production_2018)
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-2">
+                    @Html.LabelFor(x => x.production_2019, new { @Class = "form-label" })
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x => x.production_2019, new { @class = "form-control" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ValidationMessageFor(x => x.production_2019)
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-2">
+                    @Html.LabelFor(x => x.production_2020, new { @Class = "form-label" })
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x => x.production_2020, new { @class = "form-control" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ValidationMessageFor(x => x.production_2020)
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg">Ekle</button>
+        }
+    </div>
+
+</section>

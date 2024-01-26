@@ -1,0 +1,108 @@
+﻿@model List<WebApplication1.Models.Corousel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@section carousel{
+    @Html.Partial("~/Views/Shared/Partials/_CorouselPartial.cshtml", Model)
+}
+@if (Request.IsAuthenticated)
+{
+    <div class="grey-bg container-fluid">
+        <section id="minimal-statistics">
+            <div class="row justify-content-center">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <a href="Home/CitiesProducingPears" class="text-decoration-none">
+                                    <div class="media d-flex">
+                                        <div class="align-self-center">
+                                            <i class="fa-solid fa-house fa-2xl"></i>
+                                        </div>
+                                        <div class="media-body text-right">
+                                            <h3>Yetiştirildiği Şehirler</h3>
+                                            <span>(Türkiye)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <a href="Home/FruitProductionDistribution" class="text-decoration-none">
+                                    <div class="media d-flex">
+                                        <div class="align-self-center">
+                                            <i class="fa-solid fa-chart-line fa-2xl"></i>
+                                        </div>
+                                        <div class="media-body text-right">
+                                            <h3>Üretim Dağılımı</h3>
+                                            <span>(Dünya)</span>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <a href="Home/PearTypes" class="text-decoration-none">
+                                    <div class="media d-flex">
+                                        <div class="align-self-center">
+                                            <i class="fa-solid fa-location-dot fa-2xl"></i>
+                                        </div>
+                                        <div class="media-body text-right">
+                                            <h3>Çeşitleri</h3>
+                                            <span>(Dünya)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+    </div>
+}
+
+<section class="page-section portfolio" id="about">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Armut</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="row d-flex justify-content-center mt-5 ">
+
+            <div class="col-md-10" style="font-family:Roboto">
+                <p class="fs-4">Kültür armudu bütün dünya üzerinde elma kültürünün yayıldığı hemen her yerde yetiştirilmektedir. Armut, elmalara göre sıcağa ve kurağa daha dayanıklıdır. Yayılma alanı kuzey yarımkürede 55. enlem derecesine ulaşabildiği halde elmanın iyi yetişemediği Akdeniz'in sıcak iklimli bölgelerinde de önemini korumaktadır..</p>
+                <p class="fs-4">Türkiye'deki toplam meyve üretiminin yaklaşık olarak beşte birini yumuşak çekirdekli meyveler yani elma, armut ve ayva teşkil etmektedir. Bunun da % 18'i armuttur. Dünya armut üretiminde ülkemiz, ABD, Japonya, İspanya, Fransa ve Almanya'dan sonra 6. sırayı almaktadır.</p>
+                <p class="fs-4">Memleketimizde armut yetiştiriciliği hemen bütün bölgelerimize yayılmıştır. Ancak kapama bahçeleşme Samsun, Ankara, Bursa ve Antalya illerinde yaygınlaşmıştır. Isparta genelinde yerli armut çeşitleri ile dağınık üretim vardır. Kapama armut bahçeleri yeni oluşmaktadır. 2007 yılı verilerine göre; ilimizde 2.175 da alanda, 3.864 ton üretim gerçekleşmiştir. Toplam ağaç sayısı meyveli meyvesiz 104.155 adettir.</p>
+                <p class="fs-4">Taze olarak yenildiği gibi reçeli, marmeladı, pekmezi, tatlıları ve meyve suyu yapılarak tüketilen armuttan likör ve rakı da yapılır. Armut ağacının kolay işlenen ve iyi cila tutan kırmızı renkli odunu ince marangozluk işlerinde kullanılır.Latince adı Pirus communis olan armut ağacı Gülgiller dendir. İlkbaharda erken açan beyaz renkli çiçekleri yabani güle benzer. Aslında armut kendine özgü biçimiyle ince kabuklu, yumuşak çekirdekli, eti bol sulu ve lezzetli bir meyvedir.</p>
+                <p class="fs-4">
+                    Her iki yarı kürenin ılıman iklim kuşağı ülkelerinde yetiştirilen armut, dünyanın en önemli meyve ağaçlarından biridir.
+                    Armut ağacı tepeye doğru genişleyen ve olgunlaştığında 13 metreye kadar ulaşan boyuyla elma ağacından daha uzun ve daha diktir.
+                </p>
+                <p class="fs-4">Armut, genellikle bir yaşındaki anaç armut fidanları aşılanarak ya da çelikleme yoluyla üretilir. Armut ağaçları oldukça uzun ömürlüdür (50-75 yıl) ve iyi bakılıp budanmazsa boyları iyice uzar. Dikildikten 4-7 yıl sonra meyve vermeye başlayan bir armut ağacı 8-10 yaşlarındayken 25–50 kg meyve verebilir.</p>
+                <p class="fs-4"><b>100 gr armutta</b>; 61 kalori, 15.3 gr karbonhidrat, 0 kolestrol, 0.4 gr yağ, 1.4 gr lif, 11 mgr fosfor, 8 mgr kalsiyum, 0.3 mgr demir, 2 mgr sodyum, 140 mgr potasyum, 7 mgr magnezyum, 20 IU A vitamini, B1, B2, B3, B6, C ve E vitaminleri ile 2.3 mgr folik asit bulunur. Düzenli olarak yendiğinde kanı temizlemesinin yanı sıra yüksek tansiyona da iyi gelir. İçindeki potasyum miktarının oldukça yüksek olması nedeniyle kalp ve böbrek hastalarının diyet reçetelerine eklenir. İçerdiği fosfor ve B vitaminiyle zihinsel yorgunluğu giderir, sinirleri teskin eder. Armut hazmı kolaylaştırır fakat kendisinin hazmı kolay değildir. Midesi sorunlu olanlar elma gibi ısırarak yemek yerine suyunu içmeyi tercih etmelidir</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
